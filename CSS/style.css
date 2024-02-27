@@ -1,0 +1,145 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --Inter: "Inter", sans-serif;
+  --Lexend-Deca: "Lexend Deca", sans-serif;
+  --main-bg: hsl(233, 47%, 7%);
+  --card-bg: hsl(244, 38%, 16%);
+  --main-color: hsl(0, 0%, 100%);
+  --stat-heading: hsla(0, 0%, 100%, 0.6);
+  --main-pharagraph: hsla(0, 0%, 100%, 0.75);
+}
+
+body {
+  font-size: 15px;
+  background-color: hsl(233, 47%, 7%);
+  font-family: var(--Inter);
+}
+
+.card {
+  margin: 20px auto;
+  width: 320px;
+  min-height: 100px;
+  background-color: var(--card-bg);
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  overflow: hidden;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  position: relative;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 235px;
+  background-color: rgba(170, 92, 219, 0.3);
+  /* top: 0;
+  left: 0; */
+}
+
+.card > img {
+  max-width: 100%;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: var(--main-color);
+  padding: 20px;
+}
+
+.content > h1 {
+  margin: 0 0 20px 0;
+}
+
+.content > h1 > span {
+  color: hsl(277, 64%, 61%);
+}
+.content > p {
+  line-height: 1.5;
+  font-size: 16px;
+  font-weight: 200;
+  color: var(--main-pharagraph);
+}
+
+.content > .stats {
+  margin-top: 40px;
+}
+
+.content > .stats > div {
+  margin-bottom: 25px;
+}
+
+.content > .stats > div > h3 {
+  margin-bottom: 5px;
+  font-size: 20px;
+}
+
+.content > .stats > div > span {
+  text-transform: uppercase;
+  font-size: 12px;
+  color: var(--stat-heading);
+}
+
+@media (min-width: 850px) {
+  .card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 840px;
+    height: 370px;
+    display: flex;
+    flex-direction: row-reverse;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+  }
+
+  .card::before {
+    width: 380px;
+    height: 100%;
+    right: 0;
+  }
+
+  .card > img {
+    width: 380px;
+  }
+
+  .card > .content {
+    display: block;
+    text-align: left;
+    padding: 40px 0 0 67px;
+  }
+
+  .card > .content > .stats {
+    display: flex;
+    justify-content: space-between;
+    max-width: 320px;
+    margin-top: 60px;
+  }
+
+  .card > .content > h1 {
+    font-size: 32px;
+  }
+
+  .card > .content > p {
+    max-width: 340px;
+    font-size: 15px;
+  }
+}
